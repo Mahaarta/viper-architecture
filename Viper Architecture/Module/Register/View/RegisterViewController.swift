@@ -87,6 +87,7 @@ class RegisterViewController: UIViewController {
         registerTitleLabel.textAlignment = .left
         registerTitleLabel.text = Register.registerTitle
         registerTitleLabel.font = FontSans(fontSansType: .medium, fontSize: 25).set()
+        registerTitleLabel.accessibilityIdentifier = "registerTitleIdentifier"
     }
     
     /// Configure `Register Title`
@@ -110,6 +111,17 @@ class RegisterViewController: UIViewController {
         textfield.isSecureTextEntry = securityTextEnable
         textfield.font = FontSans(fontSansType: .regular, fontSize: 14).set()
         textfield.clearButtonMode = securityTextEnable ? .never : .whileEditing
+        
+        switch textfield {
+        case nameTextField:
+            textfield.accessibilityIdentifier = "nameTextFieldIdentifier"
+        case passwordTextField:
+            textfield.accessibilityIdentifier = "passwordTextFieldIdentifier"
+        case emailTextField:
+            textfield.accessibilityIdentifier = "emailTextFieldIdentifier"
+        default:
+            break
+        }
     }
     
     /// Configure `Register Button`
@@ -122,6 +134,7 @@ class RegisterViewController: UIViewController {
         registerButton.backgroundColor = .systemBlue
         registerButton.setTitleColor(.white, for: .normal)
         registerButton.setAttributedTitle(attributes, for: .normal)
+        registerButton.accessibilityIdentifier = "registerButtonIdentifier"
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
     
@@ -179,6 +192,18 @@ class RegisterViewController: UIViewController {
         alreadyHaveAccountTextView.isEditable = false
         alreadyHaveAccountTextView.isSelectable = true
         alreadyHaveAccountTextView.delegate = self
+        
+        /// Set accessibilityIdentifier specifically for the link text within UITextView
+        if let linkRange = (alreadyHaveAccountTextView.text as NSString?)?.range(of: Register.alreadyHaveAccount) {
+            let linkStartPosition = alreadyHaveAccountTextView.position(from: alreadyHaveAccountTextView.beginningOfDocument, offset: linkRange.location)
+            let linkEndPosition = alreadyHaveAccountTextView.position(from: linkStartPosition!, offset: linkRange.length)
+            
+            if let textRange = alreadyHaveAccountTextView.textRange(from: linkStartPosition!, to: linkEndPosition!) {
+                let linkRect = alreadyHaveAccountTextView.firstRect(for: textRange)
+                let linkAccessibilityElement = alreadyHaveAccountTextView.inputAccessoryView?.hitTest(linkRect.origin, with: nil)
+                linkAccessibilityElement?.accessibilityIdentifier = "signinLinkIdentifier"
+            }
+        }
     }
     
     /// Configure `Detect First Responder`

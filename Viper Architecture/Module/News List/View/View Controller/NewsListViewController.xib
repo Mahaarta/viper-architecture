@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsListViewController" customModule="Viper_Architecture" customModuleProvider="target">
             <connections>
+                <outlet property="spinner" destination="Cic-YQ-obr" id="edr-fZ-Dxe"/>
                 <outlet property="tableView" destination="Non-Zc-x2T" id="dJe-a1-avA"/>
                 <outlet property="view" destination="gSM-5W-Ih1" id="o0C-sn-Pfz"/>
             </connections>
@@ -23,13 +25,18 @@
                     <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Cic-YQ-obr">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="NPv-KK-dIc"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Cic-YQ-obr" firstAttribute="centerX" secondItem="gSM-5W-Ih1" secondAttribute="centerX" id="05x-6P-FFS"/>
                 <constraint firstItem="NPv-KK-dIc" firstAttribute="bottom" secondItem="Non-Zc-x2T" secondAttribute="bottom" id="1cb-gG-mXI"/>
                 <constraint firstItem="NPv-KK-dIc" firstAttribute="trailing" secondItem="Non-Zc-x2T" secondAttribute="trailing" id="5zb-zI-HWO"/>
                 <constraint firstItem="Non-Zc-x2T" firstAttribute="top" secondItem="NPv-KK-dIc" secondAttribute="top" id="9RY-cK-mbM"/>
+                <constraint firstItem="Cic-YQ-obr" firstAttribute="centerY" secondItem="gSM-5W-Ih1" secondAttribute="centerY" id="cWy-bq-7He"/>
                 <constraint firstItem="Non-Zc-x2T" firstAttribute="leading" secondItem="NPv-KK-dIc" secondAttribute="leading" id="jv7-DA-Ek6"/>
             </constraints>
             <point key="canvasLocation" x="-516" y="-541"/>

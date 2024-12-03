@@ -1,7 +1,8 @@
-# What is VIPER
+
+## What is VIPER
 VIPER is an architecture pattern for organizing code in iOS applications. It stands for View, Interactor, Presenter, Entity, and Router. Each component in the VIPER architecture has a specific responsibility, and together they promote a clean and modular structure
 
-# VIPER architecture
+## VIPER architecture
 ### View
 - The View is responsible for presenting the user interface and capturing user input.
 - It communicates with the Presenter to receive updates and sends user input back to the Presenter
@@ -21,3 +22,25 @@ VIPER is an architecture pattern for organizing code in iOS applications. It sta
  ### Router
 - The Router handles navigation between different modules or screens in the application.
 - It is responsible for presenting and dismissing ViewControllers and communicates with the Presenter to initiate navigation
+
+## Unit Test
+- Network Manager Test
+- Login Test
+  - Mock
+    - Mock View
+    - Mock Router
+    - Mock Presenter
+    - Mock Interactor
+  - Presenter Test
+  - Interactor Test
+- Register
+  - Mock
+    - Mock View
+    - Mock Interactor
+    - Mock Presenter
+   - Presenter Test
+   - Interactor Test
+ 
+## UI Test 
+- LoginViewControllerUITest
+- RegisterViewControllerUITest

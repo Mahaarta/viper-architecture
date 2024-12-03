@@ -7,49 +7,205 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E0D65F43-9F23-4FCA-AC22-D9AB6791885A"
+            uuid = "212BC068-3A3B-4A01-B929-B71DF2AA7C39"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Viper Architecture/Module/News List/Presenter/NewsListPresenter.swift"
+            filePath = "Viper Architecture/Supporting Files/Network/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "newsListFetched()"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "NetworkManager"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "212BC068-3A3B-4A01-B929-B71DF2AA7C39 - 771dba52f363b55b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.AnyObserver&lt;&#x3c4;_0_0&gt;) -&gt; RxSwift.Disposable in Viper_Architecture.NetworkManager.excuteQueryWithEncoding&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(url: Foundation.URL, method: Alamofire.HTTPMethod, encoding: Alamofire.JSONEncoding, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, additionalHeaders: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) -&gt; RxSwift.Observable&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Viper Architecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minata/Work/Viper%20Architecture/Viper%20Architecture/Supporting%20Files/Network/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "1252">
+               </Location>
+               <Location
+                  uuid = "212BC068-3A3B-4A01-B929-B71DF2AA7C39 - 176b8cd7558b929e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;&#x3c4;_0_0, Alamofire.AFError&gt;) -&gt; () in closure #1 (RxSwift.AnyObserver&lt;&#x3c4;_0_0&gt;) -&gt; RxSwift.Disposable in Viper_Architecture.NetworkManager.excuteQueryWithEncoding&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(url: Foundation.URL, method: Alamofire.HTTPMethod, encoding: Alamofire.JSONEncoding, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, additionalHeaders: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) -&gt; RxSwift.Observable&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Viper Architecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minata/Work/Viper%20Architecture/Viper%20Architecture/Supporting%20Files/Network/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "304">
+               </Location>
+               <Location
+                  uuid = "212BC068-3A3B-4A01-B929-B71DF2AA7C39 - 176b8cd7558b929e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;&#x3c4;_0_0, Alamofire.AFError&gt;) -&gt; () in closure #1 (RxSwift.AnyObserver&lt;&#x3c4;_0_0&gt;) -&gt; RxSwift.Disposable in Viper_Architecture.NetworkManager.excuteQueryWithEncoding&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(url: Foundation.URL, method: Alamofire.HTTPMethod, encoding: Alamofire.JSONEncoding, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, additionalHeaders: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) -&gt; RxSwift.Observable&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Viper Architecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minata/Work/Viper%20Architecture/Viper%20Architecture/Supporting%20Files/Network/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "400">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E16CD2C1-C477-4F51-9EA4-5D8D20A6DF75"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Viper ArchitectureTests/Unit Test/Login Test/LoginInteractorTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "testLoginProcessFailure()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "E0D65F43-9F23-4FCA-AC22-D9AB6791885A - 335ee0c51a71bfcf"
+                  uuid = "E16CD2C1-C477-4F51-9EA4-5D8D20A6DF75 - ac5590afd8ae64e7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Viper_Architecture.NewsListPresenter.getNewsList(at: Swift.Int) -&gt; Swift.Optional&lt;Viper_Architecture.NewsListEntity&gt;"
-                  moduleName = "Viper Architecture"
+                  symbolName = "closure #1 (Swift.Error) -&gt; () in Viper_ArchitectureTests.LoginInteractorTest.testLoginProcessFailure() -&gt; ()"
+                  moduleName = "Viper ArchitectureTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/minata/Work/Viper%20Architecture/Viper%20Architecture/Module/News%20List/Presenter/NewsListPresenter.swift"
+                  urlString = "file:///Users/minata/Work/Viper%20Architecture/Viper%20ArchitectureTests/Unit%20Test/Login%20Test/LoginInteractorTest.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "60">
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "52">
                </Location>
                <Location
-                  uuid = "E0D65F43-9F23-4FCA-AC22-D9AB6791885A - 74499c4668355d8b"
+                  uuid = "E16CD2C1-C477-4F51-9EA4-5D8D20A6DF75 - ac5590afd8ae64e7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Viper_Architecture.NewsListPresenter.newsListFetched() -&gt; ()"
-                  moduleName = "Viper Architecture"
+                  symbolName = "closure #1 (Swift.Error) -&gt; () in Viper_ArchitectureTests.LoginInteractorTest.testLoginProcessFailure() -&gt; ()"
+                  moduleName = "Viper ArchitectureTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/minata/Work/Viper%20Architecture/Viper%20Architecture/Module/News%20List/Presenter/NewsListPresenter.swift"
+                  urlString = "file:///Users/minata/Work/Viper%20Architecture/Viper%20ArchitectureTests/Unit%20Test/Login%20Test/LoginInteractorTest.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "44">
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "E16CD2C1-C477-4F51-9EA4-5D8D20A6DF75 - ac5590afd8ae6444"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Error) -&gt; () in Viper_ArchitectureTests.LoginInteractorTest.testLoginProcessFailure() -&gt; ()"
+                  moduleName = "Viper ArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minata/Work/Viper%20Architecture/Viper%20ArchitectureTests/Unit%20Test/Login%20Test/LoginInteractorTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "E16CD2C1-C477-4F51-9EA4-5D8D20A6DF75 - ac5590afd8ae7b9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Error) -&gt; () in Viper_ArchitectureTests.LoginInteractorTest.testLoginProcessFailure() -&gt; ()"
+                  moduleName = "Viper ArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minata/Work/Viper%20Architecture/Viper%20ArchitectureTests/Unit%20Test/Login%20Test/LoginInteractorTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "E16CD2C1-C477-4F51-9EA4-5D8D20A6DF75 - ac5590afd8ae6482"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Error) -&gt; () in Viper_ArchitectureTests.LoginInteractorTest.testLoginProcessFailure() -&gt; ()"
+                  moduleName = "Viper ArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minata/Work/Viper%20Architecture/Viper%20ArchitectureTests/Unit%20Test/Login%20Test/LoginInteractorTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "64">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58393F5B-E9A4-4506-888D-C751F2F42415"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Viper Architecture/Module/Login/Presenter/LoginPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "navigateToRegister()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF401DA7-F2F4-41FD-A7DC-5B4D053D9623"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Viper Architecture/Module/Login/Route/LoginRoute.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "navigateToRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "836B64DC-7AED-4CAF-897B-FBD32C1FEEE0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Viper ArchitectureUITests/Register/RegisterViewControllerUITest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "testRegisterForm()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

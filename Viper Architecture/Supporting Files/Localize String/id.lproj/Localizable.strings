@@ -35,4 +35,5 @@
 "password" = "Kata Sandi";
 
 // MARK: News
+"news-list" = "Berita";
 "problem-fetching-news" = "Terjadi masalah dalam mengambil data berita";

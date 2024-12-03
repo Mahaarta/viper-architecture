@@ -243,6 +243,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <accessibility key="accessibilityConfiguration" identifier="registerViewControllerIdentifier"/>
             <constraints>
                 <constraint firstItem="Dpi-lw-Roz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="548-VH-gwT"/>
                 <constraint firstItem="Dpi-lw-Roz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="JMb-BL-brd"/>

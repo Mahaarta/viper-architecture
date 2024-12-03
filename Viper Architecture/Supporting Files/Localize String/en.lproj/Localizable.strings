@@ -35,4 +35,5 @@
 "password" = "Password";
 
 // MARK: News
+"news-list" = "News";
 "problem-fetching-news" = "Problem Fetching News";

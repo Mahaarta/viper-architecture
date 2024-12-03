@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol NewsListPresenterToInteractorProtocol: Any {
  
     var presenter: NewsListInteractorToPresenterProtocol? { get set }
-    var newsListDatas: [NewsListEntity]? { get }
+    var newsListDatas: [NewsListEntity]? { get set }
     
-    func fetchNewsList(source: String)
+    func fetchNewsList(source: String) -> Observable<NewsResponse?>
 }

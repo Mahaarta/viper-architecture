@@ -11,5 +11,6 @@ protocol LoginPresenterToRouterProtocol: Any {
     
     static func createModule() -> UIViewController
     func navigateToRegister(from view: LoginPresenterToViewProtocol?)
+    func navigateToDashboard(from view: LoginPresenterToViewProtocol?)
     
 }

@@ -7,7 +7,7 @@
 
 protocol LoginInteractorToPresenterProtocol: Any {
     
-    func loginSuccess()
-    func loginFailed()
+    func loginSuccess(loginEntity: LoginEntity?)
+    func loginFailed(error: Error)
     
 }

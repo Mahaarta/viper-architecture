@@ -8,6 +8,6 @@
 protocol RegisterInteractorToPresenterProtocol: Any {
     
     func registerSuccess()
-    func registerFailed()
+    func registerFailed(error: Error)
     
 }

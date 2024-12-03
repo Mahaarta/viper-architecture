@@ -13,4 +13,5 @@ protocol NewsListPresenterToViewProtocol: Any {
     
     var reloadData: PublishRelay<Void> { get }
     var showError: PublishRelay<Void> { get }
+    
 }

@@ -17,10 +17,10 @@
                 <outlet property="loginDescLabel" destination="0MM-0h-GeA" id="mbI-M8-FKI"/>
                 <outlet property="loginTitleLabel" destination="ZYh-qh-Ott" id="xc4-o1-oBp"/>
                 <outlet property="passwordLabel" destination="my5-pM-iCk" id="p0g-9H-dyF"/>
-                <outlet property="passwordTextView" destination="PQU-Wg-sQf" id="M75-gl-Sji"/>
+                <outlet property="passwordTextField" destination="PQU-Wg-sQf" id="s4c-te-bN6"/>
                 <outlet property="scrollView" destination="4Fk-0g-j8s" id="I2e-6B-ywS"/>
                 <outlet property="usernameLabel" destination="6yH-zO-FTs" id="AW0-LQ-TPl"/>
-                <outlet property="usernameTextView" destination="Y9q-fr-yvt" id="qKk-xj-5ht"/>
+                <outlet property="usernameTextField" destination="Y9q-fr-yvt" id="5l1-vq-jRE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -196,6 +196,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <accessibility key="accessibilityConfiguration" identifier="LoginViewControllerIdentifier"/>
             <constraints>
                 <constraint firstItem="4Fk-0g-j8s" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="YOC-ah-Zb8"/>
                 <constraint firstItem="4Fk-0g-j8s" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="e8i-X5-HDg"/>

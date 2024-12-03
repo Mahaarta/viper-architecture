@@ -13,23 +13,27 @@ import Alamofire
 class NewsListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    let showError = PublishRelay<Void>()
+    var showError = PublishRelay<Void>()
     let reloadData = PublishRelay<Void>()
     var presenter: NewsListViewToPresenterProtocol?
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = News.newsList
         
         setUpTableView()
         configureObservable()
+        confifureLoadingSpinner()
         presenter?.updateView(source: "tech")
     }
     
     /// Configure `Observable`
     private func configureObservable() {
         reloadData.subscribe(onNext: { [weak self] in
+            self?.confifureLoadingSpinner(isLoading: false)
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
         
@@ -42,7 +46,19 @@ class NewsListViewController: UIViewController {
     private func setUpTableView() {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        tableView.accessibilityIdentifier = "newsListTableViewIdentifier"
         tableView.register(UINib(nibName: "NewsListTableViewCell", bundle: .main), forCellReuseIdentifier: "NewsListTableViewCell")
+    }
+    
+    /// Configure `Loading Spinner`
+    private func confifureLoadingSpinner(isLoading: Bool = true) {
+        if isLoading {
+            spinner.isHidden = false
+            spinner.startAnimating()
+        } else {
+            spinner.isHidden = true
+            spinner.stopAnimating()
+        }
     }
     
     /// Configure `Alert View`
@@ -53,6 +69,7 @@ class NewsListViewController: UIViewController {
             preferredStyle: UIAlertController.Style.alert
         )
         
+        alert.view.accessibilityIdentifier = "ErrorAlert"
         alert.addAction(UIAlertAction(
             title: Application.okay,
             style: UIAlertAction.Style.default,
@@ -97,6 +114,8 @@ extension NewsListViewController {
     }
     
     struct News {
+        static let newsList = localizedString(StructLocalization.News.newsList)
         static let problemFetchingNews = localizedString(StructLocalization.News.problemFetchingNews)
     }
+    
 }

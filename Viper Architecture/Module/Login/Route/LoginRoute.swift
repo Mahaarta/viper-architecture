@@ -31,4 +31,20 @@ class LoginRoute: LoginPresenterToRouterProtocol {
         }
     }
     
+    func navigateToDashboard(from view: LoginPresenterToViewProtocol?) {
+        let vc = NewsListRoute.createModule()
+        removeAllViewControllerExceptLast(view, lastView: vc)
+    }
+    
+    func removeAllViewControllerExceptLast(_ view: LoginPresenterToViewProtocol?, lastView: UIViewController) {
+        if let sourceView = view as? UIViewController {
+            sourceView.navigationController?.pushViewController(lastView, animated: true)
+            
+            guard let navigationController = sourceView.navigationController else { return }
+            var navigationArray = navigationController.viewControllers /// To get all UIViewController stack as Array
+            navigationArray.remove(at: navigationArray.count - 2)
+            sourceView.navigationController?.viewControllers = navigationArray
+        }
+    }
+    
 }

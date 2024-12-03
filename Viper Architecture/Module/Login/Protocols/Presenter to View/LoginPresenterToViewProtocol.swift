@@ -13,5 +13,6 @@ protocol LoginPresenterToViewProtocol: Any {
     var loginSuccess: PublishRelay<Void> { get }
     var showError: PublishRelay<Void> { get }
     var navigateToRegister: PublishRelay<Void> { get }
+    var navigateToDashboard: PublishRelay<Void> { get }
     
 }

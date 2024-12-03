@@ -16,16 +16,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTitleLabel: UILabel!
     @IBOutlet weak var loginDescLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var usernameTextView: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var passwordTextView: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: Button!
     @IBOutlet weak var dontHaveAccountTextView: UITextView!
     
     var presenter: LoginViewToPresenterProtocol?
     let loginSuccess = PublishRelay<Void>()
-    let showError = PublishRelay<Void>()
+    var showError = PublishRelay<Void>()
     let navigateToRegister = PublishRelay<Void>()
+    let navigateToDashboard = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -36,9 +37,9 @@ class LoginViewController: UIViewController {
         configureLoginTitleLabel()
         configureLoginDescLabel()
         configureUsernameLabel()
-        configureUsernameTextView()
+        configureUsernameTextField()
         configurePasswordLabel()
-        configurePasswordTextView()
+        configurePasswordTextField()
         configureLoginButton()
         configureAlreadHasAccountLabel()
     }
@@ -46,14 +47,13 @@ class LoginViewController: UIViewController {
     /// Configure `Observable`
     private func configureObservable() {
         loginSuccess.subscribe(onNext: { [weak self] in
-            let alert = UIAlertController(title: Application.nice, message: LoginString.loginSuccess, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: Application.okay, style: UIAlertAction.Style.default, handler: nil))
-            self?.present(alert, animated: true, completion: nil)
+            self?.presenter?.navigateToDashboard()
             self?.loginButton.isLoading = false
         }).disposed(by: disposeBag)
         
         showError.subscribe(onNext: { [weak self] in
             let alert = UIAlertController(title: Application.whoops, message: LoginString.loginFailed, preferredStyle: UIAlertController.Style.alert)
+            alert.view.accessibilityIdentifier = "ErrorAlert"
             alert.addAction(UIAlertAction(title: Application.back, style: UIAlertAction.Style.default, handler: nil))
             self?.present(alert, animated: true, completion: nil)
             self?.loginButton.isLoading = false
@@ -89,11 +89,12 @@ class LoginViewController: UIViewController {
     }
     
     /// Configure `Username TextView`
-    private func configureUsernameTextView() {
-        usernameTextView.text = "mor_2314"
-        usernameTextView.autocorrectionType = .no
-        usernameTextView.clearButtonMode = .whileEditing
-        usernameTextView.font = FontSans(fontSansType: .regular, fontSize: 14).set()
+    private func configureUsernameTextField() {
+        usernameTextField.text = "mor_2314"
+        usernameTextField.autocorrectionType = .no
+        usernameTextField.clearButtonMode = .whileEditing
+        usernameTextField.accessibilityIdentifier = "usernameTextFieldIdentifier"
+        usernameTextField.font = FontSans(fontSansType: .regular, fontSize: 14).set()
     }
     
     /// Configure `Password textView`
@@ -104,11 +105,12 @@ class LoginViewController: UIViewController {
     }
     
     /// Configure `password textView`
-    private func configurePasswordTextView() {
-        passwordTextView.text = "83r5^_"
-        passwordTextView.autocorrectionType = .no
-        passwordTextView.isSecureTextEntry = true
-        passwordTextView.font = FontSans(fontSansType: .regular, fontSize: 14).set()
+    private func configurePasswordTextField() {
+        passwordTextField.text = "83r5^_"
+        passwordTextField.autocorrectionType = .no
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.accessibilityIdentifier = "passwordTextFieldIdentifier"
+        passwordTextField.font = FontSans(fontSansType: .regular, fontSize: 14).set()
     }
     
     /// Configure `Login Button`
@@ -122,6 +124,7 @@ class LoginViewController: UIViewController {
         loginButton.setTitleColor(.white, for: .normal)
         loginButton.setAttributedTitle(attributes, for: .normal)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        loginButton.accessibilityIdentifier = "loginButtonIdentifier"
     }
     
     /// Configure `Register Label`
@@ -177,6 +180,19 @@ class LoginViewController: UIViewController {
         dontHaveAccountTextView.isEditable = false
         dontHaveAccountTextView.isSelectable = true
         dontHaveAccountTextView.delegate = self
+        dontHaveAccountTextView.accessibilityIdentifier = "dontHaveAccountTextViewIdentifier"
+        
+        /// Set accessibilityIdentifier specifically for the link text within UITextView
+        if let linkRange = (dontHaveAccountTextView.text as NSString?)?.range(of: Register.signup) {
+            let linkStartPosition = dontHaveAccountTextView.position(from: dontHaveAccountTextView.beginningOfDocument, offset: linkRange.location)
+            let linkEndPosition = dontHaveAccountTextView.position(from: linkStartPosition!, offset: linkRange.length)
+            
+            if let textRange = dontHaveAccountTextView.textRange(from: linkStartPosition!, to: linkEndPosition!) {
+                let linkRect = dontHaveAccountTextView.firstRect(for: textRange)
+                let linkAccessibilityElement = dontHaveAccountTextView.inputAccessoryView?.hitTest(linkRect.origin, with: nil)
+                linkAccessibilityElement?.accessibilityIdentifier = "signupLinkIdentifier"
+            }
+        }
     }
     
     /// Configure `Detect First Responder`
@@ -261,6 +277,7 @@ extension LoginViewController {
     struct Register {
         static let signup = localizedString(StructLocalization.Register.signUp)
     }
+
 }
 
 @available(iOS 17.0, *)

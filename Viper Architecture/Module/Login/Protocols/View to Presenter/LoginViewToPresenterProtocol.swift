@@ -13,7 +13,8 @@ protocol LoginViewToPresenterProtocol: Any {
     var interactor: LoginPresenterToInteractorProtocol? { get set }
     var router: LoginPresenterToRouterProtocol? { get set }
     
-    func loginProcess(username: String, password: String)
     func navigateToRegister()
+    func navigateToDashboard()
+    func loginProcess(username: String, password: String)
     
 }

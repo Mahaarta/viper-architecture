@@ -6,6 +6,7 @@
 //
 
 protocol NewsListViewToPresenterProtocol: Any {
+    
     var view: NewsListPresenterToViewProtocol? { get set }
     var interactor: NewsListPresenterToInteractorProtocol? { get set }
     var router: NewsListPresenterToRouterProtocol? { get set }

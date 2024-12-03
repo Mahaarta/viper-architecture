@@ -7,40 +7,27 @@
 
 import Foundation
 import Alamofire
+import RxSwift
 
 class RegisterInteractor: RegisterPresenterToInteractorProtocol {
     var presenter: RegisterInteractorToPresenterProtocol?
-    var registerData: RegisterEntity?
+    var RegisterSuccess: Bool?
     
     private func getPath() -> String {
         return RegisterBaseEndpoint.getBasePath() + "v1/"
     }
     
-    func registerProcess(name: String, email: String, password: String, avatar: String) {
-        let endpoint = getPath() + "users"
+    func registerProcess(name: String, email: String, password: String, avatar: String) -> Observable<RegisterEntity?> {
+        let endpoint = URL(string: getPath() + "users")!
         let parameters: [String: Any] = ["name": name, "password": password, "email": email, "avatar": avatar]
         
-        AF.request(
-            endpoint,
+        let data: Observable<RegisterEntity?> = NetworkManager.shared.excuteQueryWithEncoding(
+            url: endpoint,
             method: .post,
-            parameters: parameters,
-            encoding: JSONEncoding.default
-        ).response { response in
-            let statusCode = response.response?.statusCode
-            if statusCode == 200 || statusCode == 201 {
-                guard let data = response.data else { return }
-                do {
-                    let decoder = JSONDecoder()
-                    let registerResponse = try decoder.decode(RegisterEntity.self, from: data)
-                    self.registerData = registerResponse
-                    self.presenter?.registerSuccess()
-                } catch let error {
-                    print(error)
-                }
-                
-            } else {
-                self.presenter?.registerFailed()
-            }
-        }
+            encoding: JSONEncoding.default,
+            parameters: parameters
+        )
+
+        return data
     }
 }
